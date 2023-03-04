@@ -258,12 +258,12 @@ const Home = () => {
             </div> : null}
 
             {planPurchaseShow ? <div className='absolute w-[65%]  top-[450px] rounded-lg shadow-xl  z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex flex-col justify-center gap-3 h-[180px] shadow-2xl border border-gray-300 items-center bg-white w-full text-red-800 rounded-xl'>
-                    <div>
+                <div className='flex flex-col justify-center gap-3 h-[180px] shadow-2xl border border-gray-300 items-center bg-white w-full text-black rounded-xl'>
+                    {/* <div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16">
                             <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
                         </svg>
-                    </div>
+                    </div> */}
                     <div className='text-2xl font-extrabold'>Successful Purchase</div>
                 </div>
             </div> : null}
@@ -301,9 +301,9 @@ const Home = () => {
                             </div>
                         </div>
                         <div>
-                            <h1 className='text-gray-600 mb-3 mt-2 text-md mr-5 font-semibold'>Are you sure you want to buy this plan?</h1>
+                            <h1 className='text-gray-600 mb-2 mt-2 text-md mr-5 font-semibold'>Are you sure you want to buy this plan?</h1>
 
-                            <div className='flex justify-end pt-4'>
+                            <div className='flex justify-end pt-2'>
                                 <button onClick={() => closeModal('ok')} className='bg-red-800 text-white px-2 py-1   w-[64px]'>Yes</button>
                                 <button onClick={() => closeModal('cancel')} className='border border-gray-300  px-2 py-1   w-[64px] ml-2'>No</button>
                             </div>
@@ -377,7 +377,7 @@ const Home = () => {
             {/*Navigation bar */}
             <div className="bg-red-800  text-white font-semibold relative flex overflow-x-hidden  mx-1 my-1 rounded-md py-1  sm:w-3/5 lg:w-3/5 overflow-y-hidden">
                 <div className="flex flex-row justify-around text-xs items-center w-full py-1 px-2 ">
-                    <a href="https://t.me/LenscartEarningApp" className=' no-underline text-white cursor-pointer'>
+                    <a href="https://t.me/MahindratharApp" className=' no-underline text-white cursor-pointer'>
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
                             <img src={headset1} alt="online" className='w-8' />
                             <div>Telegram</div>
