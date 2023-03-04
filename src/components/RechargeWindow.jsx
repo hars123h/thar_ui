@@ -91,7 +91,7 @@ const RechargeWindow = () => {
                 <div className='font-bold text-xl text-red-800'>UPI Information</div>
                 <div className="box flex rounded-lg p-6 flex-col mt-3 bg-red-800 text-white">
                     <div className='text-md'>Payment Amount</div>
-                    <div className='text-4xl'>&#8377; {recharge_value}</div>
+                    <div className='text-2xl'>&#8377; {recharge_value}</div>
                 </div>
 
                 <div className='font-bold text-xl text-red-800'>Payment Via UPI</div>
@@ -100,9 +100,8 @@ const RechargeWindow = () => {
                     <div className='flex rounded-md items-center justify-between gap-2  p-2 border-2 border-red-800'>
                         <div className='text-red-800 font-bold'>{amountDetails.upi_id}</div>
                         <CopyToClipboard text={`${amountDetails.upi_id}`} onCopy={() => toaster('Copied to clipboard')}>
-                            <div className='text-lg font-bold text-red-800 cursor-pointer'>Copy</div>
+                            <div className='text-sm font-bold text-red-800 cursor-pointer'>Copy</div>
                         </CopyToClipboard>
-
                     </div>
                 </div>
 

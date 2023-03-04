@@ -140,7 +140,7 @@ const Register = () => {
             <div className='text-center'>
                 <img src={logo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-2' width={240} />
             </div>
-            <div style={{ boxShadow: " -1px 1px 5px 5px rgb(209, 213, 219)" }} className="box mb-20   gap-2 m-auto  rounded-xl lg:w-2/5 w-[85%]  p-4 w-50% flex flex-col">
+            <div style={{ boxShadow: " -1px 1px 2px 2px rgb(209, 213, 219)" }} className="box mb-20   gap-2 m-auto  rounded-xl lg:w-2/5 w-[85%]  p-4 w-50% flex flex-col">
                 <div className='outline-none flex items-center justify-between mb-2  rounded-full'>
                     <div className='w-full border border-gray-300 rounded-full px-2'>
                         <input value={mobno} onChange={e => setMobno(e.target.value)} type="text"

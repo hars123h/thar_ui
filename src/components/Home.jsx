@@ -111,7 +111,7 @@ const customStyles2 = {
         border: 'none',
         padding: 0,
         width: '100%',
-        borderRadius:'16px'
+        borderRadius: '16px'
     },
 };
 
@@ -257,9 +257,9 @@ const Home = () => {
                 </div>
             </div> : null}
 
-            {planPurchaseShow ? <div className='w-[80%] absolute z-50 top-[500px] left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex gap-2 text-center bg-black opacity-80 text-white px-4 py-1 rounded-md'>
-                    Successful Purchase
+            {planPurchaseShow  ? <div className='w-[60%] absolute z-50 top-[500px] left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+                <div className='flex gap-2 justify-center bg-black opacity-80 text-white px-4 py-1 rounded-md'>
+                    <div className='my-1'>Successful Purchase</div>
                 </div>
             </div> : null}
 
@@ -327,16 +327,16 @@ const Home = () => {
                                     , the more commissions you earn
                                 </div>
                                 <div>
-                                    Level 1 {amountDetails.level1_percent}% For example, team members invest 1000rs, you will get {amountDetails.level1_percent*10}rs
+                                    Level 1 {amountDetails.level1_percent}% For example, team members invest 1000rs, you will get {amountDetails.level1_percent * 10}rs
                                 </div>
                                 <div>
-                                    Level 2 {amountDetails.level2_percent}% For example, team members invest 1000rs, you will get {amountDetails.level2_percent*10}rs
+                                    Level 2 {amountDetails.level2_percent}% For example, team members invest 1000rs, you will get {amountDetails.level2_percent * 10}rs
                                 </div>
                                 <div>
-                                    Level 3 {amountDetails.level3_percent}% For example, team members invest 1000rs, you will get {amountDetails.level3_percent*10}rs
+                                    Level 3 {amountDetails.level3_percent}% For example, team members invest 1000rs, you will get {amountDetails.level3_percent * 10}rs
                                 </div>
                                 <div>show strength, make youself rich</div>
-                                
+
                             </div>
 
                             <div className='border-t border-gray-200 my-1'></div>
@@ -391,7 +391,7 @@ const Home = () => {
                     </div>
 
                     <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                        <img src={money_bag} alt="invite" className='w-8' onClick={() => (isBetween()||true) ?
+                        <img src={money_bag} alt="invite" className='w-8' onClick={() => (isBetween() || true) ?
                             navigate('/withdrawal', { state: { withdrawalPassword: originalwpwd, loginPassword: originalpwd } }) : toaster('You can withdraw only between 10:00 AM to 7:00 PM')
                         } />
                         <div>Withdrawal</div>
