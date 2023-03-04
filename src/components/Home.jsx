@@ -110,7 +110,7 @@ const customStyles2 = {
         position: 'relative',
         border: 'none',
         padding: 0,
-        width: '95%',
+        width: '100%',
         borderRadius:'16px'
     },
 };
@@ -321,8 +321,8 @@ const Home = () => {
                 >
                     <div className='w-full rounded-lg shadow-xl z-10 border border-gray-200'>
                         <div className='flex  flex-col bg-white w-full text-white rounded-md'>
-                            <div className='bg-red-800 text-center px-1 py-2 text-lg shadow-md text-white'>MAHINDRA THAR Bulletin</div>
-                            <div className='flex flex-col p-2 text-md gap-2 font-normal bg-white text-red-700 pt-4 mb-[20px]'>
+                            <div className='bg-red-800 text-center px-1 py-2 text-lg shadow-md text-white'>MahindraThar</div>
+                            <div className='flex flex-col  p-2 text-sm gap-2 font-normal bg-white text-red-700 pt-4 mb-[20px]'>
                                 <div>Welcome to Mahindra Thar App</div>
                                 <div>MahindraThar is a long term earning app</div>
                                 <div>Daily Income Daily Withdrawal</div>
@@ -344,11 +344,11 @@ const Home = () => {
                                 
                             </div>
 
-                            <div className='border-t border-gray-600 my-1'></div>
+                            <div className='border-t border-gray-200 my-1'></div>
 
                         </div>
                         <div className='flex justify-end'>
-                            <button className='text-center w-16 mx-2 border border-blue-400 mt-1 text-white font-semibold p-1 mb-2 bg-gray-800'
+                            <button className='text-center w-16 mx-2 border border-blue-300 mt-1 text-white font-semibold p-1 mb-2 bg-gray-800'
                                 onClick={(e) => {
                                     setWelcomeShow(false);
                                     localStorage.setItem('pop_up_closed', 1);
