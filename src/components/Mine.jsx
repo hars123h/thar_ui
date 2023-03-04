@@ -217,7 +217,7 @@ const Mine = () => {
 
       <ul className=' list-none flex justify-around items-center mx-auto w-4/5 mt-6'>
 
-        {isBetween() === false ? <li className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => toaster('You can withdraw only between 9:00 to 19:00 hours only.')}>
+        {(isBetween()||true)===false ? <li className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => toaster('You can withdraw only between 9:00 to 19:00 hours only.')}>
           <img src={money_bag} alt="invite" className='w-7 h-7 mx-auto' />
           <div className='text-center text-white text-sm'>Withdrawl</div>
         </li> : <li className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => navigate('/withdrawal', { state: { withdrawalPassword: originalwpwd, loginPassword: originalpwd } })}>
