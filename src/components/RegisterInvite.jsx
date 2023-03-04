@@ -16,6 +16,7 @@ import { PhoneAndroid, VerifiedUserOutlined, LockOutlined } from '@material-ui/i
 import wind_login from '../images/wind_login.jpg';
 import tuborg_logo from '../images/tuborg_logo.svg';
 import lenskart_logo from '../images/lenskart_logo.png';
+import logo from '../images/thar_images/logo.png';
 
 
 
@@ -137,7 +138,7 @@ const Register = () => {
                 </svg>
                 Register</div>
             <div className='text-center'>
-                <img src={lenskart_logo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-2' width={240} />
+                <img src={logo} alt="hp_logo" className='m-auto md:w-2/6 sm:w-1/6 mt-8 mb-2' width={240} />
             </div>
             <div className="box mb-20 border-2 m-auto  rounded-xl border-solid lg:w-2/5 w-4/5 shadow-xl p-4 w-50% flex flex-col">
                 <div className='outline-none flex items-center justify-between mb-2 border-b-2 border-gray-300 rounded-full px-2'>
