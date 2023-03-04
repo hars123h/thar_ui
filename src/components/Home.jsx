@@ -585,17 +585,17 @@ const Home = () => {
                             <div>Home</div>
                         </div>
 
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={() => navigate('/team')}>
+                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center' >
                             <img src={ubon_group} alt="recharge" className='w-4' />
                             <div>Team</div>
                         </div>
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' onClick={() => navigate('/project')}>
+                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center ' >
                             <img src={book_image} alt="app_dwd" className='w-4' />
                             <div>Project</div>
                         </div>
 
 
-                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center' onClick={() => navigate('/mine')}>
+                        <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
                             <img src={ubon_user} alt="invite" className='w-4' />
                             <div>My</div>
                         </div>
