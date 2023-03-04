@@ -1,4 +1,4 @@
-const BASE_URL = "https://wallet-5klca.ondigitalocean.app/api";
+const BASE_URL = "https://sea-turtle-app-z7f8m.ondigitalocean.app/api";
 export default BASE_URL;
 
 //https://wallet-5klca.ondigitalocean.app/api/
