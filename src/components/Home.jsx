@@ -257,9 +257,9 @@ const Home = () => {
                 </div>
             </div> : null}
 
-            {planPurchaseShow ? <div className='w-[90%] absolute z-50 top-[500px] left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+            {planPurchaseShow ? <div className='w-[80%] absolute z-50 top-[500px] left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 text-center bg-black opacity-80 text-white px-4 py-1 rounded-md'>
-                    <div>Successful Purchase</div>
+                    Successful Purchase
                 </div>
             </div> : null}
 
