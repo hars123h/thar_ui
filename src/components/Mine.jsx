@@ -197,7 +197,7 @@ const Mine = () => {
           </div>
         </div>
 
-        <div className="h-28 overflow-y-visible rounded-xl  info_box bg-red-400 text-white flex items-center justify-between w-4/5 mx-auto mt-6 px-4 py-1">
+        <div className="h-[6rem] overflow-y-visible rounded-xl  info_box bg-red-400 text-white flex items-center justify-between w-4/5 mx-auto mt-6 px-4 py-1">
             <div className='flex flex-col items-center'>
               <div className='text-xs mb-2'>&#8377; {new Intl.NumberFormat().format(balance)}</div>
               <div>Balance</div>
@@ -218,37 +218,37 @@ const Mine = () => {
       <ul className=' list-none flex justify-around items-center mx-auto w-4/5 mt-6'>
 
         {isBetween() === false ? <li className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => toaster('You can withdraw only between 9:00 to 19:00 hours only.')}>
-          <img src={money_bag} alt="invite" className='w-10 h-10 mx-auto' />
+          <img src={money_bag} alt="invite" className='w-7 h-7 mx-auto' />
           <div className='text-center text-white text-sm'>Withdrawl</div>
         </li> : <li className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => navigate('/withdrawal', { state: { withdrawalPassword: originalwpwd, loginPassword: originalpwd } })}>
-          <img src={money_bag} alt="invite" className='w-10 h-10 mx-auto' />
+          <img src={money_bag} alt="invite" className='w-7 h-7 mx-auto' />
           <div className='text-center text-white text-sm'>Withdrawl</div>
         </li>}
 
         <li className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => navigate('/recharge')}>
-          <img src={recharge_image} alt="invite" className='w-10 h-10 mx-auto' />
+          <img src={recharge_image} alt="invite" className='w-7 h-7 mx-auto' />
           <div className='text-center text-white text-sm'>Recharge</div>
         </li>
 
         <li className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => navigate('/user_feedback')}>
-          <img src={paper_image} alt="invite" className='w-10 h-10 mx-auto' />
+          <img src={paper_image} alt="invite" className='w-7 h-7 mx-auto' />
           <div className='text-center text-white text-sm'>Feedback</div>
         </li>
       </ul>
 
       <div className='flex justify-around items-center mx-auto w-4/5'>
         <div className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => navigate('/invite')}>
-          <img src={invite_image} alt="invite" className='w-10 h-10 mx-auto' />
+          <img src={invite_image} alt="invite" className='w-7 h-7 mx-auto' />
           <div className='text-center text-white text-sm'>Invite</div>
         </div>
 
         <div className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => navigate('/record')}>
-          <img src={paper_image} alt="invite" className='w-10 h-10 mx-auto' />
+          <img src={paper_image} alt="invite" className='w-7 h-7 mx-auto' />
           <div className='text-center text-white text-sm'>Record</div>
         </div>
 
         <div className='bg-red-800 flex-col flex items-center justify-around p-3 rounded-2xl m-4 w-[80px] cursor-pointer' onClick={() => navigate('/settings', { state: { withdrawalPassword: originalwpwd, loginPassword: originalpwd } })}>
-          <img src={adminSetting} alt="invite" className='w-10 h-10 mx-auto' />
+          <img src={adminSetting} alt="invite" className='w-7 h-7 mx-auto' />
           <div className='text-center text-white text-sm'>Settings</div>
         </div>
       </div>

@@ -110,7 +110,8 @@ const customStyles2 = {
         position: 'relative',
         border: 'none',
         padding: 0,
-        width: '85%'
+        width: '95%',
+        borderRadius:'16px'
     },
 };
 
@@ -321,17 +322,26 @@ const Home = () => {
                     <div className='w-full rounded-lg shadow-xl z-10 border border-gray-200'>
                         <div className='flex  flex-col bg-white w-full text-white rounded-md'>
                             <div className='bg-red-800 text-center px-1 py-2 text-lg shadow-md text-white'>MAHINDRA THAR Bulletin</div>
-                            <div className='flex flex-col p-2 text-md gap-2 font-normal bg-white text-red-700 pt-4 mb-[300px]'>
-                                <div>Welcome to Mahindra Thar Daily Income Program</div>
-                                <div>Sign Up to get 100 rupees</div>
-                                <div>We will help all VIP members get safe and reliable income every day for a long time.</div>
-                                {/* <div>Let TuborgBeer create unlimited wealth with you.</div>
-                                <div>The TuborgBeer85 APP is officialy launched, let us walk together on the road to wealth.</div>
-                                <div>Invest 490 &#8377; Earn 110 &#8377; Daily</div>
-                                <div>Invest 1600 &#8377; Earn 408 &#8377; Daily</div>
-                                <div>Invest 4900 &#8377; Earn 1320 &#8377; Daily</div>
-                                <div>Invest 13900 &#8377; Earn 3915 &#8377; Daily</div>
-                                <div>Invest 289000 &#8377; Earn 8500 &#8377; Daily</div> */}
+                            <div className='flex flex-col p-2 text-md gap-2 font-normal bg-white text-red-700 pt-4 mb-[50px]'>
+                                <div>Welcome to Mahindra Thar App</div>
+                                <div>MahindraThar is a long term earning app</div>
+                                <div>Daily Income Daily Withdrawal</div>
+                                <div>Users can invest and make money by themselves</div>
+                                <div>You can also form your own team to earn generous commissions</div>
+                                <div>Invite team memebers to join by sharing the invitation link, the more people you invite
+                                    , the more commissions you earn
+                                </div>
+                                <div>
+                                    Level 1 {amountDetails.level1_percent}% For example, team members invest 1000rs, you will get {amountDetails.level1_percent*10}rs
+                                </div>
+                                <div>
+                                    Level 2 {amountDetails.level2_percent}% For example, team members invest 1000rs, you will get {amountDetails.level2_percent*10}rs
+                                </div>
+                                <div>
+                                    Level 3 {amountDetails.level3_percent}% For example, team members invest 1000rs, you will get {amountDetails.level3_percent*10}rs
+                                </div>
+                                <div>show strength, make youself rich</div>
+                                
                             </div>
 
                             <div className='border-t border-gray-600 my-1'></div>
@@ -365,28 +375,28 @@ const Home = () => {
             </div>
 
             {/*Navigation bar */}
-            <div className="bg-red-800  text-white font-semibold relative flex overflow-x-hidden  mx-1 my-1 rounded-md py-2  sm:w-3/5 lg:w-3/5 overflow-y-hidden">
-                <div className="flex flex-row justify-around text-xs items-center w-full py-2 px-3 ">
+            <div className="bg-red-800  text-white font-semibold relative flex overflow-x-hidden  mx-1 my-1 rounded-md py-1  sm:w-3/5 lg:w-3/5 overflow-y-hidden">
+                <div className="flex flex-row justify-around text-xs items-center w-full py-1 px-2 ">
                     <a href="https://t.me/LenscartEarningApp" className=' no-underline text-white cursor-pointer'>
                         <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                            <img src={headset1} alt="online" className='w-10' />
+                            <img src={headset1} alt="online" className='w-8' />
                             <div>Telegram</div>
                         </div>
                     </a>
 
                     <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                        <img src={invite_image} alt="invite" className='w-10' onClick={() => navigate('/invite')} />
+                        <img src={invite_image} alt="invite" className='w-8' onClick={() => navigate('/invite')} />
                         <div>Invite</div>
                     </div>
 
 
                     <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                        <img src={recharge_image} alt="recharge" className='w-10' onClick={() => navigate('/recharge')} />
+                        <img src={recharge_image} alt="recharge" className='w-8' onClick={() => navigate('/recharge')} />
                         <div>Recharge</div>
                     </div>
 
                     <div className='cursor-pointer mx-2 flex flex-col justify-center items-center'>
-                        <img src={money_bag} alt="invite" className='w-10' onClick={() => isBetween() ?
+                        <img src={money_bag} alt="invite" className='w-8' onClick={() => isBetween() ?
                             navigate('/withdrawal', { state: { withdrawalPassword: originalwpwd, loginPassword: originalpwd } }) : toaster('You can withdraw only between 10:00 AM to 7:00 PM')
                         } />
                         <div>Withdrawal</div>
@@ -457,7 +467,7 @@ const Home = () => {
                                     </span>
                                 )}
 
-                                {userDetails && (amountDetails.plan_state[5] === 0) ? (
+                                {/* {userDetails && (amountDetails.plan_state[5] === 0) ? (
                                     <span className='pointer-events-none'>
                                         <Card product_type={"long"} product_image={asset6} handleClick={handleClick} plan_name={"Lenskart 6"} plan_cycle={80} plan_daily_earning={16550} plan_amount={48000} plan_type={'Big Plan'} />
                                     </span>
@@ -465,9 +475,9 @@ const Home = () => {
                                     <span>
                                         <Card product_type={"long"} product_image={asset6} handleClick={handleClick} plan_name={"Lenskart 6"} plan_cycle={80} plan_daily_earning={16550} plan_amount={48000} plan_type={'Big Plan'} />
                                     </span>
-                                )}
+                                )} */}
 
-                                {userDetails && (amountDetails.plan_state[6] === 0) ? (
+                                {/* {userDetails && (amountDetails.plan_state[6] === 0) ? (
                                     <span className='pointer-events-none'>
                                         <Card product_type={"long"} product_image={asset7} handleClick={handleClick} plan_name={"Lenskart 7"} plan_cycle={60} plan_daily_earning={33000} plan_amount={76000} plan_type={'Big Plan'} />
                                     </span>
@@ -475,7 +485,7 @@ const Home = () => {
                                     <span>
                                         <Card product_type={"long"} product_image={asset7} handleClick={handleClick} plan_name={"Lenskart 7"} plan_cycle={60} plan_daily_earning={33000} plan_amount={76000} plan_type={'Big Plan'} />
                                     </span>
-                                )}
+                                )} */}
 
                                 {/* {userDetails && (amountDetails.plan_state[7] === 0) ? (
                                     <span className='pointer-events-none'>
@@ -506,62 +516,62 @@ const Home = () => {
 
                 {currentVisible === 'short' && amountDetails?.plan_state && userDetails && (
                     <div className={`grid grid-cols-2`}>
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[7] === 0) ?
+                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[5] === 0) ?
                             (
                                 <span className='pointer-events-none'>
                                     {/* <span>hi</span> */}
-                                    <Card product_type={"short"} product_image={asset8} handleClick={handleClick} plan_name={"HOLI SPECIAL PLAN"} plan_cycle={3} plan_daily_earning={6000} plan_amount={8000} plan_type={'Short Plan'} />
+                                    <Card product_type={"short"} product_image={asset6} handleClick={handleClick} plan_name={"HOLI SPECIAL PLAN"} plan_cycle={3} plan_daily_earning={6000} plan_amount={8000} plan_type={'Short Plan'} />
                                 </span>
                             ) :
                             <span>
-                                <Card product_type={"short"} product_image={asset8} handleClick={handleClick} plan_name={"HOLI SPECIAL PLAN"} plan_cycle={3} plan_daily_earning={6000} plan_amount={8000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={asset6} handleClick={handleClick} plan_name={"HOLI SPECIAL PLAN"} plan_cycle={3} plan_daily_earning={6000} plan_amount={8000} plan_type={'Short Plan'} />
                             </span>
                         }
 
+                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[6] === 0) ?
+                            (<span className='pointer-events-none'>
+                                <Card product_type={"short"} product_image={asset7} handleClick={handleClick} plan_name={"Lenskart 8"} plan_cycle={2} plan_daily_earning={1200} plan_amount={1000} plan_type={'Short Plan'} />
+                            </span>) :
+                            (<span className=''>
+                                <Card product_type={"short"} product_image={asset7} handleClick={handleClick} plan_name={"Lenskart 8"} plan_cycle={2} plan_daily_earning={1200} plan_amount={1000} plan_type={'Short Plan'} />
+                            </span>
+                            )}
+
+                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[7] === 0) ?
+                            (<span className='pointer-events-none'>
+                                <Card product_type={"short"} product_image={asset8} handleClick={handleClick} plan_name={"Lenskart 9"} plan_cycle={3} plan_daily_earning={8000} plan_amount={5000} plan_type={'Short Plan'} />
+                            </span>) :
+                            (<span className=''>
+                                <Card product_type={"short"} product_image={asset8} handleClick={handleClick} plan_name={"Lenskart 9"} plan_cycle={3} plan_daily_earning={8000} plan_amount={5000} plan_type={'Short Plan'} />
+                            </span>
+                            )}
+
                         {(userDetails.boughtLong < 1 || amountDetails.plan_state[8] === 0) ?
                             (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={asset9} handleClick={handleClick} plan_name={"Lenskart 8"} plan_cycle={2} plan_daily_earning={1200} plan_amount={1000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={asset9} handleClick={handleClick} plan_name={"Lenskart 10"} plan_cycle={3} plan_daily_earning={18000} plan_amount={10000} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
-                                <Card product_type={"short"} product_image={asset9} handleClick={handleClick} plan_name={"Lenskart 8"} plan_cycle={2} plan_daily_earning={1200} plan_amount={1000} plan_type={'Short Plan'} />
+                                <Card product_type={"short"} product_image={asset9} handleClick={handleClick} plan_name={"Lenskart 10"} plan_cycle={3} plan_daily_earning={18000} plan_amount={10000} plan_type={'Short Plan'} />
                             </span>
                             )}
 
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[9] === 0) ?
-                            (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={asset10} handleClick={handleClick} plan_name={"Lenskart 9"} plan_cycle={3} plan_daily_earning={8000} plan_amount={5000} plan_type={'Short Plan'} />
-                            </span>) :
-                            (<span className=''>
-                                <Card product_type={"short"} product_image={asset10} handleClick={handleClick} plan_name={"Lenskart 9"} plan_cycle={3} plan_daily_earning={8000} plan_amount={5000} plan_type={'Short Plan'} />
-                            </span>
-                            )}
-
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[10] === 0) ?
-                            (<span className='pointer-events-none'>
-                                <Card product_type={"short"} product_image={asset1} handleClick={handleClick} plan_name={"Lenskart 10"} plan_cycle={3} plan_daily_earning={18000} plan_amount={10000} plan_type={'Short Plan'} />
-                            </span>) :
-                            (<span className=''>
-                                <Card product_type={"short"} product_image={asset1} handleClick={handleClick} plan_name={"Lenskart 10"} plan_cycle={3} plan_daily_earning={18000} plan_amount={10000} plan_type={'Short Plan'} />
-                            </span>
-                            )}
-
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[11] === 0) ?
+                        {/* {(userDetails.boughtLong < 1 || amountDetails.plan_state[11] === 0) ?
                             (<span className='pointer-events-none'>
                                 <Card product_type={"short"} product_image={asset2} handleClick={handleClick} plan_name={"Lenskart 11"} plan_cycle={4} plan_daily_earning={50000} plan_amount={30000} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
                                 <Card product_type={"short"} product_image={asset2} handleClick={handleClick} plan_name={"Lenskart 11"} plan_cycle={4} plan_daily_earning={50000} plan_amount={30000} plan_type={'Short Plan'} />
                             </span>
-                            )}
+                            )} */}
 
-                        {(userDetails.boughtLong < 1 || amountDetails.plan_state[12] === 0) ?
+                        {/* {(userDetails.boughtLong < 1 || amountDetails.plan_state[12] === 0) ?
                             (<span className='pointer-events-none'>
                                 <Card product_type={"short"} product_image={asset3} handleClick={handleClick} plan_name={"Lenskart 12"} plan_cycle={5} plan_daily_earning={120000} plan_amount={60000} plan_type={'Short Plan'} />
                             </span>) :
                             (<span className=''>
                                 <Card product_type={"short"} product_image={asset3} handleClick={handleClick} plan_name={"Lenskart 12"} plan_cycle={5} plan_daily_earning={120000} plan_amount={60000} plan_type={'Short Plan'} />
                             </span>
-                            )}
+                            )} */}
 
                         {/* {(userDetails.boughtLong < 1 || amountDetails.plan_state[15] === 0) ?
                             (<span className='pointer-events-none'>
