@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {getAuth} from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AmountContext } from '../App.js';
@@ -13,58 +13,58 @@ const RechargeWindow = () => {
 
     const { recharge_value } = useParams();
     const [refno, setRefno] = useState('');
-    const amountDetails  = useContext(AmountContext);
+    const amountDetails = useContext(AmountContext);
     const navigate = useNavigate();
     const auth = getAuth();
     const [userDetails, setUserDetails] = useState(null);
     const [toasterShow, setToasterShow] = useState(false);
     const [toasterText, setToasterText] = useState('');
 
-    const toaster = (text, arg='') => {
+    const toaster = (text, arg = '') => {
         setToasterText(text);
         setToasterShow(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             setToasterShow(false);
             //navigate('/mine');
-            if(arg==='/record') {
+            if (arg === '/record') {
                 navigate('/record');
             }
-        },5000);
+        }, 5000);
     }
 
-    const getUserDetails = async() => {
-        const  user_info = await axios.post(`${BASE_URL}/get_user`, {user_id:localStorage.getItem('uid')}).then(({data})=>data);
+    const getUserDetails = async () => {
+        const user_info = await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({ data }) => data);
         setUserDetails(user_info);
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         //console.log(amountDetails)
         getUserDetails();
-    },[]);
+    }, []);
 
 
 
     const handleRecharge = async () => {
         //console.log({ refno, recharge_value, status: 'pending' });
-        if(refno.length!==12) {
+        if (refno.length !== 12) {
             toaster('Enter a valid Ref No. of 12 digits');
             return;
         }
         try {
-            await axios.post(`${BASE_URL}/place_recharge`, { 
-                refno, 
-                recharge_value, 
-                status: 'pending', 
-                user_id: localStorage.getItem('uid'), 
-                mobno:userDetails.mobno, 
-                time:new Date(),
+            await axios.post(`${BASE_URL}/place_recharge`, {
+                refno,
+                recharge_value,
+                status: 'pending',
+                user_id: localStorage.getItem('uid'),
+                mobno: userDetails.mobno,
+                time: new Date(),
                 parent_id: userDetails.parent_id,
-                grand_parent_id: userDetails.grand_parent_id?userDetails.grand_parent_id:'',
-                great_grand_parent_id: userDetails.great_grand_parent_id?userDetails.great_grand_parent_id:''
-             }).then((response)=>{
+                grand_parent_id: userDetails.grand_parent_id ? userDetails.grand_parent_id : '',
+                great_grand_parent_id: userDetails.great_grand_parent_id ? userDetails.great_grand_parent_id : ''
+            }).then((response) => {
                 console.log('Recharge placed successfully!');
-             })
-            
+            })
+
             //console.log("Document written with ID: ", docRef1.id, docRef2.id);
             toaster('Request Placed Successfully!', '/record');
             setRefno('');
@@ -75,14 +75,14 @@ const RechargeWindow = () => {
 
     return (
         <div className='sm:h-[700px] md:h-[950px] flex flex-col gap-4  bg-white relative'>
-            {toasterShow?<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+            {toasterShow ? <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <div className='flex gap-2 bg-black opacity-80 text-white px-2 py-1 rounded-md'>
                     <div>{toasterText}</div>
                 </div>
-            </div>:null}
+            </div> : null}
             <div className="options text-center text-white flex gap-2 items-center p-2  bg-red-800 text-lg pt-2 font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate('/mine')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6  storke-white  cursor-pointer">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                <svg xmlns="http://www.w3.org/2000/svg" onClick={() => navigate("/mine")} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  storke-white  cursor-pointer">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
                 <div className='flex-grow'>Payment Window</div>
             </div>
@@ -100,9 +100,9 @@ const RechargeWindow = () => {
                     <div className='flex rounded-md items-center justify-between gap-2  p-2 border-2 border-red-800'>
                         <div className='text-red-800 font-bold'>{amountDetails.upi_id}</div>
                         <CopyToClipboard text={`${amountDetails.upi_id}`} onCopy={() => toaster('Copied to clipboard')}>
-                        <div className='text-lg font-bold text-red-800 cursor-pointer'>Copy</div>
-                </CopyToClipboard>
-                        
+                            <div className='text-lg font-bold text-red-800 cursor-pointer'>Copy</div>
+                        </CopyToClipboard>
+
                     </div>
                 </div>
 
