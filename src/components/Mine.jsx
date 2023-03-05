@@ -42,6 +42,8 @@ import adminSetting from '../images/adminSetting.png';
 import money_bag from '../images/money_bag.png';
 import logo from '../images/thar_images/logo.png';
 
+import DateDifference from '../utility/DateDifference.js';
+
 
 const customStyles2 = {
   content: {
@@ -58,6 +60,13 @@ const customStyles2 = {
   },
 };
 
+const addDays = (date, days) => {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  //console.log(result);
+  return result;
+}
+
 const Mine = () => {
 
   const navigate = useNavigate();
@@ -72,6 +81,12 @@ const Mine = () => {
   const [toasterText, setToasterText] = useState('');
   const [user_refer, setUser_refer] = useState(null);
   const [logout_popup, setLogout_popup] = useState(false);
+  const [userDetails, setUserDetails] = useState(null);
+  const [current_tab, setCurrent_tab] = useState('earning');
+  const [investment_amount, setInvestment_amount] = useState(0);
+  const [accumulated_income, setAccumulated_income] = useState(0);
+  const [today_income, setToday_income] = useState(0);
+
 
   const toaster = (text) => {
     setToasterText(text);
@@ -81,6 +96,91 @@ const Mine = () => {
       //navigate('/mine');
     }, 5000);
   }
+
+  const getUserDetails = async () => {
+    // const docRef = doc(db, 'users', auth.currentUser.uid);
+    await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(async ({ data: document }) => {
+      if (document) {
+        setUserDetails(document);
+        //console.log(document);
+        if (('plans_purchased' in document) === false) {
+          // toaster('Please buy a plan first!');
+          return;
+        }
+        if (document.plans_purchased.length > 0) {
+          var earn = 0;
+          var ia = 0, ai = 0, ti = 0;
+          var temp = document.plans_purchased.map((element) => {
+            ia += element.plan_amount;
+
+            var days = DateDifference(new Date(element.date_till_rewarded), new Date(Math.min(new Date(), addDays(new Date(element.date_purchased), element.plan_cycle))));
+            var days2 = DateDifference(new Date(element.date_till_rewarded), addDays(new Date(element.date_purchased), element.plan_cycle));
+            //console.log(days);
+            if (element.product_type === 'short') {
+              if (days === element.plan_cycle) {
+                ti += element.plan_daily_earning;
+                ai += (days * element.quantity * element.plan_daily_earning);
+                earn = (days * element.quantity * element.plan_daily_earning);
+                return {
+                  ...element,
+                  date_till_rewarded: new Date(Math.min(new Date(), addDays(new Date(element.date_purchased), element.plan_cycle))).toDateString()
+                }
+              } else {
+                return {
+                  ...element
+                }
+              }
+            }
+
+            if (days > element.plan_cycle) {
+              return {
+                ...element
+              }
+            }
+            if ((DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded))) >= 1) {
+              ti += element.plan_daily_earning;
+            }
+            ai += DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning;
+            //console.log(ai);
+            earn = earn + (days * element.quantity * element.plan_daily_earning);
+            return {
+              ...element,
+              date_till_rewarded: new Date(Math.min(new Date(), addDays(new Date(element.date_purchased), element.plan_cycle))).toDateString()
+            }
+          });
+
+          setInvestment_amount(ia);
+          setAccumulated_income(ai);
+          setToday_income(ti);
+
+        
+          await axios.post(`${BASE_URL}/update_earning`, {
+            earn: earn,
+            temp: temp,
+            user_id: localStorage.getItem('uid')
+          })
+            .then(() => console.log('Reward successfully updated'))
+            .catch(error => console.log('Some error Occured'));
+        }
+
+        await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({data})=>{
+          setEarning(data.earning);
+          //console.log(data);
+        });
+
+      } else {
+        console.log('Data not found');
+      }
+
+    }).then(() => {
+      //console.log('This is working');
+    })
+      .catch(error => console.log('Some error occured', error));
+  }
+
+  useEffect(() => {
+    getUserDetails();
+  }, []);
 
 
   useLayoutEffect(() => {
