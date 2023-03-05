@@ -3,17 +3,17 @@
   "name": "WebApp",
   "icons": [
     {
-      "src": "logo512.png",
+      "src": "logo.png",
       "sizes": "200x54",
       "type": "image/x-icon"
     },
     {
-      "src": "logo512.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "200x54"
     },
     {
-      "src": "logo512.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "200x54"
     }
